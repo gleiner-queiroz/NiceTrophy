@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Nice Trophy - ODS 5</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(184, 0, 0) 100%);
+            padding: 20px;
+        }
+
+        .caixa-ods {
+            height: 100vh;
+            width: 90%;
+            border-radius: 25px;
+            margin: 20px auto;
+            background: rgba(25,25,25,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            position: relative;
+            animation: pulse 4s infinite ease-in-out;
+            padding: 30px;
+            color: white;
+            
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+            100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+        }
+
+        .caixa-interna {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .caixa-ods img{
+        width: 500px;
+        height: 300px;
+        margin-left: 3%;
+        border-radius: 10%; 
+       
+        
+        margin-top: 20px; 
+        object-fit: cover; 
+        transition: all 0.3s ease; 
+}
+
+.caixa-ods img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px rgba(34, 33, 36, 0.8); 
+}
+
+        .titulo-ods {
+            font-family: "Montserrat", sans-serif ;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.226);
+        }
+        .titulo-ods img{
+            width: 40px;
+            height: 50px;
+            
+            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.24))
+                    drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.205))
+                    drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.322));
+        }
+        
+
+        .texto-ods {
+            font-family: "Montserrat", sans-serif;
+            line-height: 1.6;
+            
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .menu {
+        display: flex;
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .navbar .menu li {
+    list-style: none;
+    margin: 0 6px;
+}
+
+    .navbar .menu a:hover {
+    color: aliceblue;
+    justify-content: center;
+}
+
+.navbar .menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bold;
+    transition: all 0.6s ease;
+    
+}
+
+.navbar .menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.navbar .menu a:hover {
+    color: rgb(0, 0, 0);
+    background: azure;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.navbar .menu a.active {
+    color: #ff3b3b;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
+}
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.24))
+                    drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.205))
+                    drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.322));
+        }
+
+        .botoes input {
+            outline: none;
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+            font-style: italic;
+            font-family: "Pixelify Sans", sans-serif;
+            border-radius: 12px;
+            padding: 8px 20px;
+            border: none;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background: rgba(195, 0, 255, 0.164);
+        }
+
+        .botoes input:hover {
+            transform: scale(0.95);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                        0 0 20px rgba(162, 0, 255, 0.6),
+                        0 0 30px rgba(255, 0, 200, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="main.html"><img src="controll.png"></a>
+            
+        </div>
+        <ul class="menu">
+            <li><a href="ods.html" class="active">ODS</a></li>
+           
+            <li><a href="sobre.html">SOBRE</a></li>
+     
+            <li><a href="tutoriais.html">TUTORIAIS</a></li>
+            
+        </ul>
+        <div class="botoes">
+            <input type="button" value="login">
+            <input type="button" value="registrar">
+        </div>
+    </nav>
+
+    
+    <div class="caixa-ods">
+        <h1 class="titulo-ods">O que é o ODS (Objetivo de Desenvolvimento Sustentável) 5 - Igualdade de Gênero?
+            
+        </h1>
+        
+        <div class="caixa-interna">
+            <p class="texto-ods">
+                O ODS 5, da Agenda 2030 da ONU, tem como objetivo alcançar a igualdade de gênero e empoderar todas as mulheres e meninas. Ele busca eliminar todas as formas de discriminação e violência de gênero, incluindo abuso, tráfico e práticas nocivas como o casamento infantil. Também defende o reconhecimento do trabalho doméstico não remunerado, a participação plena das mulheres na política e na economia, o acesso à saúde sexual e reprodutiva e a criação de leis e políticas que garantam os direitos das mulheres. A promoção da igualdade de gênero é fundamental para o desenvolvimento justo e sustentável da sociedade.
+                
+            </p>
+        </div>
+    </div>
+
+    
+    <div class="caixa-ods">
+        <h1 class="titulo-ods">Visibilidade Feminina no Universo Gamer</h1>
+        
+        <div class="caixa-interna">
+            <p class="texto-ods">
+                Mulheres ainda enfrentam barreiras no mundo dos games
+                pois são sub-representadas como personagens, desenvolvedoras e até mesmo como jogadoras. 
+                Muitas enfrentam preconceito, invisibilidade ou ambientes pouco acolhedores para expressar 
+                sua paixão pelos games. O NICE TROPHY atua para eliminar essas barreiras ao promover um ambiente acessível, respeitoso e inclusivo.
+                Nosso aplicativo e website utilizam linguagem neutra, oferecem suporte igualitário para todos os perfis de jogadores e valorizam a diversidade na comunidade gamer.
+                Incentivamos a participação feminina destacando mulheres gamers, compartilhando suas histórias e criando conteúdos que respeitam e acolhem diferentes experiências.
+                Acreditamos que conquistar troféus é para todos, e que um universo de jogos verdadeiramente inclusivo começa com respeito, visibilidade e representatividade.
+            </p>
+            
+        </div>
+        <img src="image.png">
+        <img src="Top-10-personagens-femininas-no-mundo-dos-games.jpg">
+    </div>
+</body>
+</html>
