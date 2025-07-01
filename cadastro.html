@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro - Nice Trophy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Montserrat:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(90deg, rgb(0, 0, 0), rgb(140, 0, 255));
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-family: 'Pixelify Sans', sans-serif;
+      font-size: 2rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: #c300ff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      font-family: 'Pixelify Sans', sans-serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background: #9e00cc;
+    }
+
+    .voltar {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #ffffffaa;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .voltar:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Cadastro</h2>
+    <form action="#" method="post">
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <input type="submit" value="Cadastrar">
+    </form>
+    <a href="login.html" class="voltar">Já tem uma conta? Faça login</a>
+  </div>
+</body>
+</html>
