@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTA: Vice City - Tutoriais</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      width: 100%;
+      background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(140, 0, 255) 100%);
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar {
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .menu {
+        display: flex;
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .navbar .menu li {
+    list-style: none;
+    margin: 0 6px;
+}
+
+    .navbar .menu a:hover {
+    color: aliceblue;
+    justify-content: center;
+}
+
+.navbar .menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bold;
+    transition: all 0.6s ease;
+    
+}
+
+.navbar .menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.navbar .menu a:hover {
+    color: rgb(0, 0, 0);
+    background: azure;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.navbar .menu a.active {
+    color: #c300ff;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
+}
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      margin-top: 30px;
+      display: flex;
+      gap: 30px;
+    }
+
+    /* Índice lateral */
+    .indice {
+      flex: 0 0 320px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      color: white;
+    }
+
+    .indice h2 {
+      font-size: 1.5rem;
+      font-family:"Pixelify Sans", sans-serif;
+      padding-bottom: 10px;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(195, 0, 255, 0.7);
+    }
+
+    .indice h3 {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(195, 0, 255, 0.7);
+    }
+
+    .indice img {
+    
+     height: 30px;
+    }
+
+    .indice ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .indice li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .indice a.missao-link {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      justify-content: center;
+      transition: color 0.3s ease;
+      flex-grow: 1;
+    }
+
+    .indice a.missao-link:hover {
+      color: #c300ff;
+    }
+
+    .trofeu {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: #d4a0ff;
+      font-style: italic;
+    }
+
+    
+    .conteudo-tutoriais {
+      flex: 1;
+      max-width: 740px;
+    }
+
+    .titulo-jogo {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(195, 0, 255, 0.8);
+      text-align: center;
+    }
+
+    .img-capa {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .descricao {
+      font-size: 1.1rem;
+      font-family: "Pixelify Sans", sans-serif;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #ddd;
+    }
+
+    .tutorial {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 12px rgba(195, 0, 255, 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .tutorial:hover {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 15px rgba(195, 0, 255, 0.6);
+    }
+
+    .tutorial h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .tutorial p {
+      font-size: 1rem;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .tutorial video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(195, 0, 255, 0.5);
+      margin-bottom: 15px;
+    }
+
+    a.voltar {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 25px;
+      border-radius: 12px;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 10px rgba(195, 0, 255, 0.6);
+    }
+
+    a.voltar:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Responsivo simples */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .indice {
+        width: 100%;
+        position: relative;
+        top: auto;
+        margin-bottom: 25px;
+      }
+      .conteudo-tutoriais {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="controll.png" alt="logo" /></a>
+    </div>
+    <ul class="menu">
+      <li><a href="ods.html">ODS</a></li>
+      <li><a href="sobre.html">SOBRE O APP</a></li>
+      <li><a href="tutoriais.html" class="active">TUTORIAIS</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <aside class="indice" aria-label="Índice de missões e troféus">
+      <h2>Índice de missões e troféus:</h2>
+      <h3>Troféus de Ouro <img src="https://www.pocketpsn.com/assets/img/gold.png" alt=""></h3>
+      <ul>
+        <li>
+          <a class="missao-link" href="#trofeu1">🏆 Iron-y</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu2">🏆 Not my First Time</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu3">🏆 One is Better Than Two</a>
+         
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu4">🏆 Running Rampant</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu5">🏆 Daredevil</a>
+          
+        </li>
+      </ul>
+
+      <h3>Troféus de Prata <img src="https://www.pocketpsn.com/assets/img/silver.png" alt=""></h3>
+      <ul>
+        <li>
+          <a class="missao-link" href="#trofeu6">🏆 Born in the 80’s</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu7">🏆 Point A to Point B</a>
+        
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu8">🏆 High Quality H2O</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu9">🏆 Pie Guy</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu10">🏆 Bull in a China Shop</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu11">🏆 Vice City Mogul</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu12">🏆 Salutations My Little Friend</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu13">🏆 Catch Me if You Can</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu14">🏆 Somebody Call the Wambulance?</a>
+          
+        </li>
+
+        <h3>Troféus de Bronze <img src="https://pocketpsn.com/assets/img/bronze.png" alt=""></h3>
+      <ul>
+        <li>
+          <a class="missao-link" href="#trofeu15">🏆 Greasy Palms</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu16">🏆 Just Like the Real Thing B</a>
+        
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu17">🏆 Keepie-Uppy Okie Dokie</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu18">🏆 Gun for Hire</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu19">🏆 I'm Famous!</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#trofeu20">🏆 Don't Need Roads</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Legal Counsel</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Life of the Party</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 South American Connection</a>
+          
+        </li>
+         <li>
+          <a class="missao-link" href="#missao1">🏆 Big Heat from Little Havana</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao2">🏆Chauffeur</a>
+        
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Tommy Two-Wheels</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Grand Theft Auto</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Bloodstained Hands</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Take the Cannoli</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Mischief Managed</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Chopper’d Up</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 City Sleuth</a>
+          
+        </li>
+         <li>
+          <a class="missao-link" href="#missao3">🏆 Done it All</a>
+          
+        </li>
+         <li>
+          <a class="missao-link" href="#missao1">🏆 Put 'Em Up</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao2">🏆Offender</a>
+        
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Retro Lewk</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Scouring the City!</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Break it Up</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Target Practice</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Prime Real Estate</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Vice Vice Baby</a>
+          
+        </li>
+        <li>
+          <a class="missao-link" href="#missao3">🏆 Baked Distractions</a>
+          
+        </li>
+      </ul>
+    </aside>
+
+    <main class="conteudo-tutoriais">
+      <h1 class="titulo-jogo">GTA: Vice City</h1>
+
+      <img
+        src="https://files.tecnoblog.net/wp-content/uploads/2021/01/cheats_codigos_gta_vice_city-e1611002276985.jpg"
+        alt="Capa GTA Vice City"
+        class="img-capa"
+      />
+
+      <p class="descricao">
+        Bem-vindo à página de tutoriais do GTA: Vice City! Aqui você encontra guias passo a passo para completar missões, conquistar troféus e platinar o jogo com facilidade.
+      </p>
+
+      
+      <section class="tutorial" id="trofeu1" tabindex="-1">
+        <h3>🏆 Iron-y: Mate o desenvolvedor de propriedades com um taco de golfe durante a missão "Four Iron"</h3>
+        <iframe width="100%" height="315"
+    src="https://www.youtube.com/watch?v=BjOoAmSGr04"
+    title="Iron-y"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+        
+        <h4> 1. Início da missão Four Iron</h4>
+           <p> É a primeira missão dada por Avery Carrington, após completar “Riot”.
+            Objetivo: assassinar um desenvolvedor de propriedades rival dentro do Leaf Links Country Club.</p>
+         <h4>2. Preparação do personagem</h4>
+           <p> Você receberá um convite + roupa de golf e a missão exige passar pela segurança — armas são confiscadas pela porta de detecção. Portanto, leve apenas o taco de golfe — foi a única arma permitida no local.</p>
+           <h4> 3. Entrar no campo de golfe</h4>
+           <p> Com o traje de golf, passe pela entrada sem resistências. Siga até o driving range, onde o desenvolvedor rival estará praticando golf</p>
+           <h4> 4. Eliminação com o taco de golfe</h4>
+           <p> Deficiência de armas exigem que você use somente o taco para derrubá-lo. Acerte o alvo até que ele caia — isso ativa o troféu Iron‑y</p>
+           <h4> Finalização da missão</h4>
+           <p> Após eliminá-lo, você pode entrar no carrinho de golf que ele usava (ou outro veículo próximo) e fugir. A missão é concluída normalmente e o troféu é desbloqueado.</p>
+            <h4> ✅ Dicas adicionais</h4>
+           <p> Faça um save manual antes de iniciar “Four Iron”.
+            Uma técnica usada por jogadores no Reddit: estacionar um carro próximo à entrada e pular o portão, preservando o taco e armas sem precisar passar pela segurança.
+            Se o troféu não aparecer, você pode reinstalar a missão e tentar novamente — a missão é repetível aproveitando um save anterior.</p>
+      </section>
+
+      
+      <section class="tutorial" id="trofeu2" tabindex="-1">
+        <h3>🏆 Not my First Time: “Complete a missão ‘G‑Spotlight’ sem cair dos telhados”</h3>
+        <iframe width="100%" height="315"
+    src="https://www.youtube.com/watch?v=QBMhNziqv-k"
+    title="Not my First Time"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+        <h4> 1. Pré-requisitos</h4>
+           <p> Você precisa comprar o estúdio Inner Global em Prawn Island e avançar até completar a missão "Martha’s Mug Shot". A missão "G‑Spotlight" só fica disponível após isso</p>
+         <h4>2. Faça um save manual antes de iniciar a missão</h4>
+           <p> Importante: esse troféu é perdível. Se você falhar, recrie a missão a partir do save.</p>
+           <h4> 3. No início da missão</h4>
+           <p> Você receberá uma PCJ-600 para atravessar os prédios de Downtown.
+            Objetivo: ir de telhado em telhado, seguindo os marcadores, até alcançar a base do estúdio.</p>
+           <h4> 4. Dicas de execução</h4>
+           <p> Vá com velocidade constante, mas não muito rápido.
+            No momento anterior a cada salto, puxe levemente o analógico para trás para um wheelie, ganhando mais ar e clareza na descida.
+            A velocidade é crítica: alinhe bem o ponto de partida para não falhar.
+            Se você tocar o solo, o troféu não será dado — mesmo que complete a missão.
+        
+            ❗ Porém, cair da moto ainda pode ser perdoado desde que Tommy não chegue ao chão — toque apenas o solo do telhado.</p>
+     
+      </section>
+
+     
+      <section class="tutorial" id="trofeu3" tabindex="-1">
+        <h3>🏆 One is Better Than Two</h3>
+        <iframe width="100%" height="315"
+    src="https://www.youtube.com/watch?v=PBIiFmeK35A"
+    title="One is Better Than Two "
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+        <h4> 1. Obtenha a moto ideal</h4>
+           <p> As melhores escolhas são a Sanchez (dirt bike) ou a PCJ‑600 (esportiva).
+            A Sanchez tende a ser mais fácil em ritmo lento, enquanto a PCJ oferece mais potência.
+           </p>
+         <h4>2. Escolha o local perfeito</h4>
+           <p> Locais recomendados:
+            Praia (Washington Beach) — muito espaço e terreno relativamente plano.
+            Pista do aeroporto — reta longa, porém já no fim pode faltar espaço.</p>
+           <h4> 3. Ajustes de controle</h4>
+           <p> o controle clássico: segure o left stick para trás, e toque repetidamente o botão de aceleração (X/RT) para manter o wheelie.
+            A técnica ideal é encontrar equilíbrio entre velocidade e estabilidade: muita pressão faz cair, pouca impede o wheelie. </p>
+           <h4> 4. Execute o wheelie</h4>
+           <p> Vá com calma no terreno plano selecionado.
+            Puxe o stick (L) para trás e toque acelerador em ritmo constante para manter a roda dianteira no ar.
+            Verifique o cronômetro de duração do wheelie que aparece no canto da tela. Quando atingir 30 segundos, solte e conquiste o troféu.</p>
+      </section>
+
+      <a href="tutoriais.html" class="voltar">← Voltar para os jogos</a>
+    </main>
+  </div>
+</body>
+</html>
