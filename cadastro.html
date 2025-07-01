@@ -62,23 +62,25 @@
       color: rgba(255, 255, 255, 0.6);
     }
 
-    input[type="submit"] {
+    .cadastro-btn {
       width: 100%;
       padding: 12px;
-      background: #c300ff;
-      border: none;
-      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
       color: white;
       font-weight: bold;
-      font-family: 'Pixelify Sans', sans-serif;
-      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background 0.3s;
+      font-family: 'Pixelify Sans', sans-serif;
+      transition: all 0.3s ease;
     }
 
-    input[type="submit"]:hover {
-      background: #9e00cc;
+    .cadastro-btn:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      color: black;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
+    
 
     .voltar {
       display: block;
@@ -98,11 +100,12 @@
 <body>
   <div class="card">
     <h2>Cadastro</h2>
-    <form action="#" method="post">
+    <form action="index.html" method="GET">
       <input type="text" name="nome" placeholder="Nome completo" required>
       <input type="email" name="email" placeholder="E-mail" required>
       <input type="password" name="senha" placeholder="Senha" required>
-      <input type="submit" value="Cadastrar">
+      
+      <button type="submit" class="cadastro-btn">Cadastrar</button>
     </form>
     <a href="login.html" class="voltar">Já tem uma conta? Faça login</a>
   </div>
